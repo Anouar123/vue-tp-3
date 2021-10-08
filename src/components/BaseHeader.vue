@@ -1,8 +1,6 @@
 <template>
-<div id="base-header">Anouar SMAOUI</div>
-<a href="https://www.efrei.fr" target="_blank">Efrei School</a>
+    <slot name="top"></slot>
 </template>
-
 <script>
 
 export default {
