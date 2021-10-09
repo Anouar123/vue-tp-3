@@ -2,7 +2,7 @@
 <base-button
     :disabled="isPending"
     :btn-color="colorPalette"
-    @click.stop.prevent="handleClick"
+    @click.stop.prevent="createDebounce"
   >
     <font-awesome-icon 
       v-if="isPending"
@@ -28,15 +28,22 @@ export default {
       },
   inheritAttrs: false,
   data: () => ({
-      colorPalette
+      colorPalette,
+      isPending: false
   }),
 
   methods: {
     handleClick () {
-      const originalOnClick = /** @type {() => Promise<void>} */ (this.$attrs.onClick)
+        console.log('function called')
       this.isPending = true
-      originalOnClick().finally(() => { this.isPending = false })
-    }
+    },
+    createDebounce () {
+        if(this.isPending){
+            setTimeout(() => {
+                this.handleClick();
+            }, 2000)
+        } else this.handleClick();
+    },
   }
 }
 </script>

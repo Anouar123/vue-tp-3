@@ -15,6 +15,14 @@
     >
       BaseButton Disabled
     </button>
+
+    <button 
+    id="base-button-time"
+    class="button"
+    :style="cssVars"
+    >
+      BaseButton Time
+    </button>
   </div>
 </template>
 
@@ -68,8 +76,4 @@ export default {
 .button:focus {
   border: var(--bg-focus-color-primary);
 }
-/* .button-primary {
-  background-color: #42b983;
-}
- */
 </style>
