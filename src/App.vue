@@ -1,17 +1,14 @@
 <template>
   <base-layout/>
   <home-page />
-  <base-button/>
 </template>
 
 <script>
-import BaseButton from './components/BaseButton.vue';
 import BaseLayout from './layout/BaseLayout.vue';
 import HomePage from './pages/HomePage.vue'
 export default {
   name: 'App',
   components: {
-    'base-button': BaseButton,
     'base-layout': BaseLayout,
     'home-page': HomePage
   }
