@@ -1,13 +1,21 @@
 <template>
-<div id="home-page">Welcome to the home page!</div>
+    <div id="home-page">Welcome to the home page!</div>
+    <async-button />
 </template>
 
 <script>
-
+import AsyncButton from '../components/AsyncButton.vue';
 export default {
   name: 'HomePage',
   components: {
-  }
+    'async-button': AsyncButton,
+  },
+  props: {
+    color: {
+      type: String,
+      default: 'primary'
+    }
+  },
 }
 </script>
 
