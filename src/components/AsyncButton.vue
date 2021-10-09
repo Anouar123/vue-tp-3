@@ -3,13 +3,13 @@
     :disabled="isPending"
     :btn-color="colorPalette"
     @click.stop.prevent="createDebounce"
+    @click="clickedCount += 1"
   >
     <font-awesome-icon 
       v-if="isPending"
       :icon="['fas', 'circle-notch']"
       pulse
     />
-
     <slot />
   </base-button>
 </template>
@@ -29,19 +29,21 @@ export default {
   inheritAttrs: false,
   data: () => ({
       colorPalette,
-      isPending: false
+      isPending: false,
+      clickedCount: 0
   }),
 
   methods: {
     handleClick () {
-        console.log('function called')
+      console.log('function called')
       this.isPending = true
     },
     createDebounce () {
+        let clickedCountIncrease = this.clickedCount * 1000;
         if(this.isPending){
             setTimeout(() => {
                 this.handleClick();
-            }, 2000)
+            }, 2000 + clickedCountIncrease)
         } else this.handleClick();
     },
   }
