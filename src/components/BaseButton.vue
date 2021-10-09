@@ -26,7 +26,10 @@
   </div>
 </template>
 
+
 <script>
+
+
 export default {
   name: 'BaseButton',
   components: {
@@ -44,7 +47,10 @@ export default {
     }
   }
 }
+
 </script>
+
+
 
 <style scoped>
 #buttons {
